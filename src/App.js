@@ -22,7 +22,7 @@ class App extends React.Component {
           })
         });
         axios.get(
-                "http://musicbrainz.org/ws/2/artist/?query=begin:[2014 TO 2024] AND area:"+this.state.location
+                "http://musicbrainz.org/ws/2/artist/?query=begin:[2014 TO 2024] AND area:"
             )
             .then((res) => {
                 this.setState({
@@ -33,6 +33,7 @@ class App extends React.Component {
     }
     render() {
         const { DataisLoaded, items } = this.state;
+        console.log(items)
         if (!DataisLoaded)
             return (
                 <div>
@@ -57,6 +58,7 @@ class App extends React.Component {
                                 <div>
                                     Started in: {item['life-span'].begin}
                                 </div>
+
                             </ol>
                         </div>
                     ))}
