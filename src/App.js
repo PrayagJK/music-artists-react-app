@@ -17,7 +17,7 @@ class App extends React.Component {
           "https://get.geojs.io/v1/ip/geo.json"
         )
         .then(res => {
-          this.State({
+          this.state({
             location: res.data.city
           })
         });
